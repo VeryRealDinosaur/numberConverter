@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.6"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.6"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6"/>
+        <PackageReference Include="Avalonia_Gif" Version="1.0.0" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="Resources\" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <None Remove="Resources\giphy-2.gif" />
+      <AvaloniaResource Include="Resources\giphy-2.gif" />
+      <None Remove="Resources\Background.gif" />
+      <AvaloniaResource Include="Resources\Background.gif" />
+      <None Remove="Resources\eda5739966cb33768d8ad0d77d7307ce.gif" />
+      <AvaloniaResource Include="Resources\eda5739966cb33768d8ad0d77d7307ce.gif" />
+      <None Remove="Resources\ezgif-1-78efb4e3ed.gif" />
+      <AvaloniaResource Include="Resources\ezgif-1-78efb4e3ed.gif" />
+    </ItemGroup>
+</Project>

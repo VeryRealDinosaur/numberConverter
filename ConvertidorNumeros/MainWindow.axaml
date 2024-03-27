@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaGif="clr-namespace:AvaloniaGif;assembly=AvaloniaGif"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="ConvertidorNumeros.MainWindow"
+        Background="#ffffa5c8"
+        Title="ConvertidorNumeros">
+        
+        <Grid x:Name="App">
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                
+                <avaloniaGif:GifImage Grid.Row="0" x:Name="Background" HorizontalAlignment="Center" VerticalAlignment="Center" AutoStart="True"
+                                      SourceUri="{Binding Source=avares://ConvertidorNumeros/Resources/ezgif-1-78efb4e3ed.gif, Mode=OneWay}"/>
+                
+        <Grid Grid.Row="0" ZIndex="1" x:Name="Rows" HorizontalAlignment="Center" VerticalAlignment="Center" Height="" Width="">
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0">
+                        <Label Grid.Row="0" FontSize="50" Width="390" Height="70" Background="#ff459e2f" BorderThickness="5" Margin="15,30,0,0"> </Label>
+                        <Label Grid.Row="0" x:Name="TitleLabel" FontSize="40" Width="390" Height="70" Background="#ff68bc53" BorderThickness="5" Margin="0,0,15,0" ZIndex="1" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Roobert"> Super Convertidor </Label>
+                </Grid>
+                
+                <Grid Grid.Row="1" x:Name="Columns" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,15,5,5">
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                                
+                        <TextBox Grid.Column="0" x:Name="Entry" Watermark="Inserta un número" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="40" Width="300" Margin="0,0,2.5,0" BorderBrush="#ff459e2f"></TextBox>
+                        <Button Grid.Column="1" x:Name="BtnGo" Content="Calcular" Height="40" Width="100" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="2.5,0,0,0" Click="Cal_OnClick_" Background="#ff459e2f" Foreground="White"> </Button>
+                        
+                </Grid>
+                        
+                        <StackPanel Grid.Row="2" >
+                                <ComboBox x:Name="Dropdown" SelectedIndex="0" MinHeight="40" MaxDropDownHeight="100" Margin="5">
+                                        <ComboBoxItem>Convertir a binario</ComboBoxItem>
+                                        <ComboBoxItem>Convertir a octal</ComboBoxItem>
+                                        <ComboBoxItem>Convertir a hexadecimal</ComboBoxItem>
+                                </ComboBox>
+                        </StackPanel>
+                
+                <Label Grid.Row="3" x:Name="resultLabel" Margin="20" FontSize="20" HorizontalAlignment="Center" Background="Black" Opacity="50" Content=""></Label>
+                
+        </Grid>
+                
+        </Grid>
+        
+</Window>
